@@ -16,3 +16,9 @@ class Net(nn.Module):
         x = F.relu(self.layer1(x))
         x = self.layer2(x)
         return x
+
+    def forward_custom(self, x):
+        x = x.flatten(1)
+        x = F.relu(self.layer1(x))
+        x = self.layer2(x)
+        return x
